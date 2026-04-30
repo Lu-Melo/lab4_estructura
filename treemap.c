@@ -64,7 +64,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     
     while(tree->current != NULL) {
         keyComp = tree->current->pair->key;
-        if((int*) keyComp == (int*) key) {
+        if( keyComp == key) {
             return tree->current->pair;
         } else if(lower_than(keyComp,key)) {
             tree->current = tree->current->right;
