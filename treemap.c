@@ -59,16 +59,16 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 Pair * searchTreeMap(TreeMap * tree, void* key) {
     if(tree->root == NULL) return NULL;
     
-    void* keyComp = key;
+    void* (int) keyComp;
     tree->current = tree->root;
     
     while(tree->current != NULL) {
-        keyComp = tree->current->pair->key;
-        if(keyComp == key) {
+        (int*) keyComp = tree->current->pair->key;
+        if((int*) keyComp == (int*) key) {
             return tree->current->pair;
-        } else if(keyComp < key) {
+        } else if((int*) keyComp < (int*) key) {
             tree->current = tree->current->right;
-        } else if(keyComp > key) {
+        } else if((int*) keyComp > (int*) key) {
             tree->current = tree->current->left;
         }
     }
