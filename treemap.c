@@ -86,8 +86,8 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         tree->current = tree->root;
     }
     
-    Pair * par = searchTreeMap(tree, key);
     void* keyComp;
+    TreeNode *nodeComp;
     tree->current = tree->root;
 
     while(tree->current != NULL) {
