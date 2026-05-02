@@ -92,15 +92,19 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
     while(tree->current != NULL) {
         keyComp = tree->current->pair->key;
+        nodeComp = tree->current;
         if(is_equal(tree, keyComp, key)) {
-            return tree->current->pair;
+            return;
         } else if(tree->lower_than(keyComp,key)) {
             tree->current = tree->current->right;
         } else {
             tree->current = tree->current->left;
         }
     }
-    if(par->value != NULL) return;
+    tree->current = createTreeNode(key, value);
+    tree->current->parent = nodeComp;
+    
+    return;
 }
 
 // 4. Implemente la función TreeNode * minimum(TreeNode * x). 
