@@ -90,12 +90,10 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     }
     
     void* keyComp;
-    TreeNode *nodeComp;
     tree->current = tree->root;
 
     while(tree->current != NULL) {
         keyComp = tree->current->pair->key;
-        nodeComp = tree->current;
         if(is_equal(tree, keyComp, key)) {
             return;
         } else if(tree->lower_than(keyComp,key)) {
