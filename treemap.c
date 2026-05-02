@@ -84,12 +84,9 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     if(tree->root == NULL) {
         tree->current = tree->root;
         tree->root = Pair;
-        
     }
     
     Pair * par = searchTreeMap(tree, key);
-    
-
     void* keyComp;
     tree->current = tree->root;
 
@@ -103,7 +100,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
             tree->current = tree->current->left;
         }
     }
-    if(par->value != NULL) return NULL;
+    if(par->value != NULL) return;
 }
 
 // 4. Implemente la función TreeNode * minimum(TreeNode * x). 
