@@ -92,7 +92,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     void* keyComp;
     tree->current = tree->root;
 
-    while(true) {
+    while(1) {
         keyComp = tree->current->pair->key;
         if(is_equal(tree, keyComp, key)) {
             return;
