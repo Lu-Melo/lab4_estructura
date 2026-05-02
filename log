@@ -130,3 +130,25 @@ treemap.c:120:24: error: expected ‘;’ before ‘}’ token
   121 |     }
       |     ~                   
 29a8562
+Sat May  2 08:41:50 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:86:22: error: expected expression before ‘Pair’
+   86 |         tree->root = Pair;
+      |                      ^~~~
+treemap.c:99:33: error: ‘return’ with a value, in function returning void [-Wreturn-mismatch]
+   99 |             return tree->current->pair;
+      |                    ~~~~~~~~~~~~~^~~~~~
+treemap.c:83:6: note: declared here
+   83 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+treemap.c:106:35: error: ‘return’ with a value, in function returning void [-Wreturn-mismatch]
+  106 |     if(par->value != NULL) return NULL;
+      |                                   ^~~~
+treemap.c:83:6: note: declared here
+   83 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+cfa4bc4
