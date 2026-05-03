@@ -215,7 +215,7 @@ Pair * nextTreeMap(TreeMap * tree) {
 
     TreeNode *nodo = tree->current;
     if(nodo->right != NULL) {
-        return minimum(nodo->right->pair);
+        return (minimum(nodo->right))->pair;
     } else {
         TreeNode *aux = node;
         while(aux->parent != NULL && aux->parent->right == aux) {
