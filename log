@@ -353,3 +353,14 @@ treemap.c:157:13: error: ‘parent’ undeclared (first use in this function)
   157 |             parent->left = NULL;
       |             ^~~~~~
 085a90e
+Sun May  3 05:24:01 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:157:13: error: ‘parent’ undeclared (first use in this function)
+  157 |             parent->left = NULL;
+      |             ^~~~~~
+treemap.c:157:13: note: each undeclared identifier is reported only once for each function it appears in
+8212f31

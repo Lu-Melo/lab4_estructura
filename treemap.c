@@ -148,9 +148,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
 
     searchTreeMap(tree, node->pair->key);
-    if(aux == NULL) return;
 
     TreeNode *aux = tree->current;
+    if(aux == NULL) return;
 
     if(aux->left == NULL && aux->right == NULL) {
         if(aux->parent->left == aux) {
