@@ -166,8 +166,14 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         } else {
             aux->parent->right = aux->right;
         }
+        free(aux);
+        return;
     } else {
-        
+        TreeNode *min = minimum(aux->right);
+
+        aux->pair->key = min->pair->key;
+        aux->pair->value = min->pair->value;
+        removeNode(tree, min);
     }
     /*TreeNode *aux = tree->root;
     TreeNode *parentAux;
