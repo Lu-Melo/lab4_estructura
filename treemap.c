@@ -100,7 +100,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
             if(tree->current->right == NULL) {
                 tree->current->right = newNode;
                 newNode->parent = tree->current;
-                tree->current = tree->current->left;
+                tree->current = tree->current->right;
                 return;
             }
             tree->current = tree->current->right;
@@ -142,9 +142,7 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
     
-    searchTreeMap(tree, node->pair->key);
-
-    TreeNode *aux = tree->current;
+    TreeNode *aux = node;
     if(aux == NULL) return;
 
     if(aux->left == NULL && aux->right == NULL) {
@@ -155,6 +153,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         } else {
             aux->parent->right = NULL;
         }
+        free(aux->pair);
         free(aux);
         return;
     } else if(aux->left == NULL || aux->right == NULL) {
@@ -165,12 +164,16 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         } else {
             hijo = aux->right;
         }
-
         hijo->parent = aux->parent;
 
         if(aux->parent == NULL) {
             tree->root = hijo;
+        } else if(aux->parent->left == aux) {
+            aux->parent->left = hijo;
+        } else {
+            aux->parent->right = hijo;
         }
+        free(aux->pair); //revisar ??
         free(aux);
         return;
     } else {
@@ -180,34 +183,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         aux->pair->value = min->pair->value;
         removeNode(tree, min);
     }
-    /*TreeNode *aux = tree->root;
-    TreeNode *parentAux;
-    
-    while(aux->pair->key != node->pair->key) {
-        if(aux != NULL) {
-            return;
-        } else if (tree->lower_than(node->pair->key, aux->pair->key)) {
-            aux = aux->left;
-        } else {
-            aux = aux->right;
-        }
-    }
-    if(aux == NULL) return;
-
-    if(aux->left == NULL && aux->right == NULL) {
-        if()
-        
-        if(parentAux->left == aux) {
-            parentAux->left = NULL;
-        }
-        if(parentAux->right == aux) {
-            parentAux->right = NULL;
-        }
-    }*/
-
-
-
-    
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
