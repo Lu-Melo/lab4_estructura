@@ -159,7 +159,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             aux->parent->right = NULL;
         }
         free(aux);
-        return;
+        
     } else if(aux->left == NULL || aux->right == NULL) {
         if(aux->left != NULL) {
             aux->parent->left = aux->left;
@@ -167,7 +167,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             aux->parent->right = aux->right;
         }
         free(aux);
-        return;
+        
     } else {
         TreeNode *min = minimum(aux->right);
 
