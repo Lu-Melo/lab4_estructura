@@ -312,3 +312,30 @@ Sun May  3 04:59:48 PM UTC 2026:
  tests:  15|4
 total_score: 25/60
 44aebf6
+Sun May  3 05:22:33 PM UTC 2026: 
+ treemap.c | 45 ++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 40 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:145:20: error: statement with no effect [-Werror=unused-value]
+  145 |         tree->root == NULL;
+      |                    ^
+treemap.c:151:5: error: expected ‘,’ or ‘;’ before ‘if’
+  151 |     if(aux == NULL) return;
+      |     ^~
+treemap.c:157:13: error: ‘parent’ undeclared (first use in this function)
+  157 |             parent->left = NULL;
+      |             ^~~~~~
+treemap.c:157:13: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:165:31: error: statement with no effect [-Werror=unused-value]
+  165 |             aux->parent->left == aux->left;
+      |             ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+treemap.c:167:32: error: statement with no effect [-Werror=unused-value]
+  167 |             aux->parent->right == aux->right;
+      |             ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+treemap.c:150:11: error: unused variable ‘par’ [-Werror=unused-variable]
+  150 |     Pair *par = searchTreeMap(tree, node->pair->key)
+      |           ^~~
+cc1: all warnings being treated as errors
+3ecde63
