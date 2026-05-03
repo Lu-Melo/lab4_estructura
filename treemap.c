@@ -160,7 +160,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     } else if(aux->left == NULL || aux->right == NULL) {
         TreeNode *hijo;
 
-        if(aux->left == != NULL) {
+        if(aux->left != NULL) {
             hijo = aux->left;
         } else {
             hijo = aux->right;

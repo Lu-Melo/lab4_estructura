@@ -401,3 +401,8 @@ treemap.c:163:25: error: expected expression before ‘!=’ token
   163 |         if(aux->left == != NULL) {
       |                         ^~
 936b582
+Sun May  3 05:46:54 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+8fba0eb
