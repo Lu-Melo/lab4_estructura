@@ -306,3 +306,9 @@ treemap.c:162:24: error: ‘TreeNode’ has no member named ‘rigth’; did you
       |                        ^~~~~
       |                        right
 db9cd57
+Sun May  3 04:59:48 PM UTC 2026: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  15|4
+total_score: 25/60
+44aebf6
