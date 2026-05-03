@@ -201,12 +201,28 @@ void eraseTreeMap(TreeMap * tree, void* key){
 // Pair* nextTreeMap(TreeMap* tree) retornar el siguiente Pair del mapa a partir del puntero TreeNode* current. 
 // Recuerde actualizar este puntero.
 
+// :v
 Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+    if(tree == NULL || tree->root == NULL) return NULL;
+
+    TreeNode *min = minimum(tree->root);
+    tree->current = min;
+    return min->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    return NULL;
+    if(tree == NULL || tree->root == NULL) return NULL;
+
+    TreeNode *nodo = tree->current;
+    if(nodo->right != NULL) {
+        return minimum(nodo->right->pair);
+    } else {
+        TreeNode *aux = node;
+        while(aux->parent != NULL && aux->parent->right == aux) {
+            aux = aux->parent;
+        }
+        return aux->parent->pair;
+    }
 }
 
 // 7. La función Pair* upperBound(TreeMap* tree, void* key) retorna el Pair con clave igual a key. 

@@ -418,3 +418,26 @@ Sun May  3 08:07:46 PM UTC 2026:
  tests:  18|3
 total_score: 35/60
 730aa4b
+Sun May  3 08:19:15 PM UTC 2026: 
+ treemap.c | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:218:35: error: passing argument 1 of ‘minimum’ from incompatible pointer type [-Wincompatible-pointer-types]
+  218 |         return minimum(nodo->right->pair);
+      |                        ~~~~~~~~~~~^~~~~~
+      |                                   |
+      |                                   Pair *
+treemap.c:124:31: note: expected ‘TreeNode *’ but argument is of type ‘Pair *’
+  124 | TreeNode * minimum(TreeNode * x){
+      |                    ~~~~~~~~~~~^
+treemap.c:218:16: error: returning ‘TreeNode *’ from a function with incompatible return type ‘Pair *’ [-Wincompatible-pointer-types]
+  218 |         return minimum(nodo->right->pair);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+treemap.c:220:25: error: ‘node’ undeclared (first use in this function); did you mean ‘nodo’?
+  220 |         TreeNode *aux = node;
+      |                         ^~~~
+      |                         nodo
+treemap.c:220:25: note: each undeclared identifier is reported only once for each function it appears in
+73d73a9
