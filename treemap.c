@@ -241,7 +241,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     if(tree->root == NULL) return NULL;
 
     void* keyComp;
-    TreeNode *ub_node = tree->root;
+    TreeNode *ub_node = NULL;
     tree->current = tree->root;
 
     while(tree->current != NULL) {
