@@ -158,8 +158,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         if(parentAux->left == aux) {
             parentAux->left = NULL;
         }
-        if(parentAux->left == aux) {
-            parentAux->left = NULL;
+        if(parentAux->rigth == aux) {
+            parentAux->rigth = NULL;
         }
     }
 }
